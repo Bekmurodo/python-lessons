@@ -92,14 +92,36 @@ python = {
     'If': 'Shartlarni tekshirish operatori',
     'Integer': 'Butun son',
     'Else': 'Yoki',
+    'String': 'Matn'
     }
+#for kalit, qiymat in sorted(python.items()):
+#    print(f"{kalit}- {qiymat}")
 
+countries = {
+    'aqsh':'vashington d.c.',
+    'rossiya':'moskva',
+    'tojikiston':'dushanbe',
+    'qirg\'iziston':'bishkek',
+    'singapur':'singapur',
+    'italiya':'rim',
+    "o'zbekiston":'toshkent',
+    'malayziya':'kuala-lumpur',
+    'qozoqiston':'nursulton'
+    }
+#print("Dunyo davlatlari:")
+#for davlat, poytaxt in sorted(countries.items()):
+#    print(f"{davlat.upper()}")
+    
+#print("\nDavlatlarning poytaxtlari: ")
+#for poytaxt in sorted(countries.values()):
+#    print(f"{poytaxt.title()}")
 
-
-
-
-
-
+davlat = input("Qaysi davlatning poytaxtini bilishni istaysiz? ").lower()
+capital = countries.get(davlat)
+if capital == None:
+    print("Kechirasiz, bizda bu haqida malumot yo'q ")
+else:
+    print(f"{davlat.upper()}ning poytaxti {capital.title()} shahri")
 
 
 
