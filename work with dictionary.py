@@ -116,17 +116,40 @@ countries = {
 #for poytaxt in sorted(countries.values()):
 #    print(f"{poytaxt.title()}")
 
-davlat = input("Qaysi davlatning poytaxtini bilishni istaysiz? ").lower()
-capital = countries.get(davlat)
-if capital == None:
-    print("Kechirasiz, bizda bu haqida malumot yo'q ")
-else:
-    print(f"{davlat.upper()}ning poytaxti {capital.title()} shahri")
+#davlat = input("Qaysi davlatning poytaxtini bilishni istaysiz? ").lower()
+#capital = countries.get(davlat)
+#if capital == None:
+#    print("Kechirasiz, bizda bu haqida malumot yo'q ")
+#else:
+#    print(f"{davlat.upper()}ning poytaxti {capital.title()} shahri")
+
+menu = {
+    'osh':20000,
+    'non':2000,
+    'manti':3000,
+    'somsa':6000,
+    'shorva':12000,
+    'kabob':25000,
+    'norin':16000,
+    'tovuq':35000,
+    'olivie':20000,
+    'choy':5000,
+    'keskan osh':10000
+    }
 
 
+print("3-ta taom buyurtma bering.")
+buyurtmalar = []
+for n in range(3):
+    buyurtmalar.append(input(f"{n+1}-taom: ").lower())
+    
+for ovqat in buyurtmalar:
+    if ovqat in menu:
+        print(f"{ovqat.title()} {menu[ovqat]} so'm")
+    else:
+        print(f"Kechirasiz bizda {ovqat} yo'q")
 
-
-
+    
 
 
 
