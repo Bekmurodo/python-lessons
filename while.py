@@ -95,28 +95,42 @@ Theme: while
 #print("Rahmat!")
 
 
-savol = "Yoshingiz nechida? "
-savol += "Dastur to'xtashi uchun 'exit' yoki 'quit' deb yozing): "
+#savol = "Yoshingiz nechida? "
+#savol += "Dastur to'xtashi uchun 'exit' yoki 'quit' deb yozing): "
  
+#while True:
+#    qiymat = input(savol)
+#    if qiymat == 'exit' or qiymat == 'quit':
+#        break
+#    yosh = int(qiymat)
+#    
+#    if yosh <= 7:
+#        narx = 2000
+#    if 18 >= yosh > 7:
+#        narx = 3000
+#    if 18 < yosh < 65:
+#        narx = 10000
+#    if yosh >= 65:
+#        narx = 0
+
+#   print(f"Chipta narxi {narx} so'm")
+    
+    
+savol ="Kiritilgan sonning ildizini qaytaruvchi dastur.\n"
+savol += "Musbat son kiriting "
+savol += "(dasturni to'xtatish uchun 'exit' deb yozing): "
+
 while True:
     qiymat = input(savol)
-    if qiymat == 'exit' or qiymat == 'quit':
+    if qiymat=='exit':
+        print("Rahmat!")
         break
-    yosh = int(qiymat)
-    
-    if yosh <= 7:
-        narx = 2000
-    if 18 >= yosh > 7:
-        narx = 3000
-    if 18 < yosh < 65:
-        narx = 10000
-    if yosh >= 65:
-        narx = 0
-
-    print(f"Chipta narxi {narx} so'm")
-    
-    
-    
+    qiymat = int(qiymat)
+    if qiymat < 0:
+        continue
+    else:
+        ildiz = float(qiymat)**(0.5)
+        print(f"{qiymat} ning ildizi {ildiz} ga teng")
 
 
 
