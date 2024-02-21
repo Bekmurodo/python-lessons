@@ -98,33 +98,67 @@ def info_user(ismi,familiyasi,t_yili,t_joyi,telefoni,emaili='',joriy_yil=2024):
         'tel':telefoni}
     return user
 
-print("Mijozlarimiz malumotlarini shakillantiramiz", end=' ')
-mijozlar = []
-while True:
-    ismi = input("\nIsmingiz: ")
-    familiyasi = input('Familiyangiz: ')
-    t_yili = int(input("Tug'ulgan yilingiz: "))
-    t_joyi = input("Tugulgan joyingiz: ")
-    emaili = input("Emailingiz: ")
-    telefoni = input("Telefonongiz: ")
+#print("Mijozlarimiz malumotlarini shakillantiramiz", end=' ')
+#mijozlar = []
+#while True:
+#    ismi = input("\nIsmingiz: ")
+#    familiyasi = input('Familiyangiz: ')
+#    t_yili = int(input("Tug'ulgan yilingiz: "))
+#    t_joyi = input("Tugulgan joyingiz: ")
+#    emaili = input("Emailingiz: ")
+#    telefoni = input("Telefonongiz: ")
+#    
+#    mijozlar.append(info_user(ismi, familiyasi, t_yili, t_joyi, telefoni))
+
+#    javob = input("Yana ma'lumot qoshasizmi? (yes/no) ")
+#    if javob == 'no':
+#        break
     
-    mijozlar.append(info_user(ismi, familiyasi, t_yili, t_joyi, telefoni))
-
-    javob = input("Yana ma'lumot qoshasizmi? (yes/no) ")
-    if javob == 'no':
-        break
+#for mijoz in mijozlar:
+#    print(f"{mijoz['ism'].title()} {mijoz['familiya'].title()} {mijoz['yosh']}yoshda {mijoz['t_joy'].title()}dan telefon raqami: {mijoz['tel']}")
     
-for mijoz in mijozlar:
-    print(f"{mijoz['ism'].title()} {mijoz['familiya'].title()} {mijoz['yosh']}yoshda {mijoz['t_joy'].title()}dan telefon raqami: {mijoz['tel']}")
+#Task 2
+def bigger(x,y,z):
+    if x > y and x > z:
+        return x 
+    if y > x and y > z:
+        return y
+    if z > x and z > y:
+        return z
     
+son = bigger(9, 6, 11)
+#print(son)
 
+#Task 3
+def radius(son):
+    aylana={
+        'radius':son,
+        'diametr':son*2,
+        'perimetr':2*3.14*son,
+        'yuzi':3.14*son**2}
+    return aylana
 
+son1 = radius(15)
+#print(son1)
 
+#Task 4
+def tub_sonlar_top(min, max):
+    tub_sonlar = []
+    for n in range(min, max + 1):
+        tub = True
+        if n == 1:
+            tub = False
+        elif n == 2:
+            tub = True
+        else:
+            for x in range(2, n):
+                if n % x == 0:
+                    tub = False
+        if tub:
+            tub_sonlar.append(n)
 
-
-
-
-
+    return tub_sonlar
+print(tub_sonlar_top(2, 100))
 
 
 
