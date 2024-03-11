@@ -49,13 +49,21 @@ class AvtoSalon:
     def __len__(self):
         return len(self.avtolar)
     
-    def __call__(self,qiymat):
+    def __call__(self,*qiymat):
         if qiymat:
             for avto in qiymat:
                 self.add_avto(avto)
         else:
             return [avto for avto in self.avtolar]
     
+    def __add__(self,y):
+        if isinstance(y, AvtoSalon):
+            yangi_salon = AvtoSalon(f"{self.name} {y.name}")
+            yangi_salon.avtolar = self.avtolar + y.avtolar
+            return yangi_salon
+        elif isinstance(y, Avto):
+            self.add_avto(y)
+            
     def add_avto(self,*qiymat):
         for car in qiymat:
             if isinstance(car,Avto):
@@ -65,7 +73,7 @@ class AvtoSalon:
    
     
 salon1 = AvtoSalon("MaxAvto")
-   
+salon2 = AvtoSalon("Avto Lider")   
     
 avto1 = Avto("GM","Malibu","Qora",2020,40000)
 avto2 = Avto("GM", "Lacetti", "Oq", 2020, 20000)
@@ -73,7 +81,8 @@ avto3 = Avto("Toyota", "Corolla", "Silver", 2019, 18000)
 salon1.add_avto(avto1,avto2,avto3)
 
 avto4 = Avto("Mazda", "6", "Qizil", 2015, 30000)
-
-
+avto5 = Avto("Volkswagen", "Polo", "Qora", 2015, 30000)
+avto6 = Avto("Honda", "Accord", "Oq", 2017, 40000)
+salon2(avto4,avto5,avto6)
 
 
